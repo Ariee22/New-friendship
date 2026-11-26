@@ -1,1 +1,491 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Open Asher ♡</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5edff;
+    font-family: Georgia, serif;
+    color: #432044;
+}
+
+header {
+    text-align: center;
+    padding: 55px 20px;
+    background: linear-gradient(135deg, #5b176e, #a02055, #efb5d4);
+    color: white;
+}
+
+header h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 20px;
+}
+
+.box {
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    margin: 25px 0;
+    box-shadow: 0 5px 20px #d8b5e8;
+    text-align: center;
+}
+
+h2 {
+    color: #782b91;
+    margin-bottom: 18px;
+}
+
+button {
+    background: #8c267e;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 25px;
+    margin: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #b32852;
+}
+
+.letter {
+    display: none;
+    margin-top: 20px;
+    padding: 25px;
+    background: #f7edff;
+    border: 2px dashed #b26ac7;
+    border-radius: 20px;
+    line-height: 2;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.photo {
+    background: #f8f0ff;
+    padding: 10px;
+    border-radius: 18px;
+    border: 2px solid #e4c4f2;
+}
+
+.photo img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.photo p {
+    padding: 12px;
+    color: #8b267e;
+}
+
+/* MIXTAPE */
+
+.mixtape {
+    background: linear-gradient(135deg, #35113f, #741c61, #a42b4d);
+    color: white;
+    border-radius: 25px;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.mixtape h2 {
+    color: #ffd0ef;
+}
+
+.cassette {
+    max-width: 400px;
+    margin: 20px auto;
+    background: #d7b6e9;
+    border: 5px solid #55285f;
+    border-radius: 20px;
+    padding: 20px;
+    color: #401647;
+    box-shadow: 0 8px 20px #200c2c;
+}
+
+.cassette-label {
+    background: #f7e6ff;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.cassette-label h3 {
+    font-size: 23px;
+}
+
+.tape-window {
+    background: #521d62;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.reel {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #e9c9f4;
+    border: 8px solid #a36cb6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reel::after {
+    content: "✦";
+    font-size: 20px;
+    color: #572063;
+}
+
+.tape-line {
+    width: 70px;
+    height: 7px;
+    background: #dca3e8;
+    border-radius: 10px;
+}
+
+.song {
+    background: #f7edff;
+    color: #512253;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 18px;
+    text-align: left;
+}
+
+.song h3 {
+    color: #8a267d;
+    margin-bottom: 8px;
+}
+
+.song a {
+    display: inline-block;
+    margin-top: 10px;
+    background: #a52853;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 25px;
+}
+
+.song a:hover {
+    background: #72183e;
+}
+
+.promise {
+    background: linear-gradient(135deg, #e8d2ff, #ffd8e8);
+    line-height: 2;
+}
+
+footer {
+    background: #54205e;
+    color: #ffe4f5;
+    padding: 30px;
+    text-align: center;
+    line-height: 2;
+}
+
+#answer {
+    margin-top: 20px;
+    color: #a52853;
+}
+
+@media(max-width: 550px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    .photos {
+        grid-template-columns: 1fr;
+    }
+
+    .photo img {
+        height: auto;
+        max-height: 450px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>💌 Open Asher ♡</h1>
+
+    <p>
+        A little something made just for you.<br>
+        💜 ❤️ 💜
+    </p>
+
+    <button onclick="openLetter()">
+        Open your lil letter 💌
+    </button>
+
+</header>
+
+<div class="container">
+
+    <!-- LETTER -->
+
+    <div class="box">
+
+        <h2>A lil letter ♡</h2>
+
+        <button onclick="openLetter()">
+            Tap to open 💜
+        </button>
+
+        <div class="letter" id="letter">
+
+            <h2>Dear Asher ♡</h2>
+
+            <p>
+                I just wanted to make something little
+                to remind you that you are appreciated.
+            </p>
+
+            <p>
+                Thank you for the laughs, random
+                conversations, funny moments and the
+                little things that make our friendship special.
+            </p>
+
+            <p>
+                I hope we keep making beautiful memories,
+                keep laughing at absolutely nothing
+                and keep being ourselves.
+            </p>
+
+            <p>
+                No matter how busy life gets,
+                I hope this friendship always has
+                a little place in our hearts.
+            </p>
+
+            <h2>♡ Your bestie ♡</h2>
+
+        </div>
+
+    </div>
+
+    <!-- FOUR PHOTOS -->
+
+    <div class="box">
+
+        <h2>♡ Just us ♡</h2>
+
+        <div class="photos">
+
+            <div class="photo">
+                <img src="Card.jpg"
+                     alt="Our handmade card">
+                <p>💌 A lil something</p>
+            </div>
+
+            <div class="photo">
+                <img src="Ariee.jpg"
+                     alt="Bestie girl">
+                <p>🐰 Bunny girl</p>
+            </div>
+
+            <div class="photo">
+                <img src="Bf.jpg"
+                     alt="Bestie boy">
+                <p>🐶 Puppy boy</p>
+            </div>
+
+            <div class="photo">
+                <img src="Ani.png"
+                     alt="Bunny girl and puppy boy">
+                <p>🐰 + 🐶</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MIXTAPE -->
+
+    <div class="box mixtape">
+
+        <h2>🎧 Our Little Mixtape ❤️</h2>
+
+        <p>
+            Songs that belong on our playlist.
+        </p>
+
+        <div class="cassette">
+
+            <div class="cassette-label">
+
+                <h3>ASHER ♡ BESTIE</h3>
+
+                <p>Side A • Our favourite songs</p>
+
+            </div>
+
+            <div class="tape-window">
+
+                <div class="reel"></div>
+
+                <div class="tape-line"></div>
+
+                <div class="reel"></div>
+
+            </div>
+
+            <p style="margin-top:15px;">
+                💜 PLAY OUR TAPE ❤️
+            </p>
+
+        </div>
+
+        <div class="song">
+
+            <h3>01. Luther</h3>
+
+            <p>Kendrick Lamar ft. SZA</p>
+
+            <a href="https://www.youtube.com/results?search_query=Luther+Kendrick+Lamar+SZA"
+               target="_blank">
+               ▶ Listen to Luther
+            </a>
+
+        </div>
+
+        <div class="song">
+
+            <h3>02. 2024</h3>
+
+            <p>Playboi Carti</p>
+
+            <a href="https://www.youtube.com/results?search_query=Playboi+Carti+2024"
+               target="_blank">
+               ▶ Listen to 2024
+            </a>
+
+        </div>
+
+        <p style="margin-top:20px;">
+            Every song has a vibe.<br>
+            This one is ours. 🎧
+        </p>
+
+    </div>
+
+    <!-- FRIENDSHIP PROMISE -->
+
+    <div class="box promise">
+
+        <h2>♡ A little reminder ♡</h2>
+
+        <p>
+            You are appreciated more than you know.
+        </p>
+
+        <p>
+            Thank you for being part of my life
+            and making ordinary days a little
+            more interesting.
+        </p>
+
+        <p>
+            May we always have reasons to laugh,
+            stories to tell and memories to look back on.
+        </p>
+
+        <h2>Besties ♡</h2>
+
+    </div>
+
+    <!-- QUIZ -->
+
+    <div class="box">
+
+        <h2>👀 Bestie check!</h2>
+
+        <p>
+            Will we still be laughing at our nonsense
+            in the future?
+        </p>
+
+        <button onclick="quiz()">
+            Obviously YES 😂
+        </button>
+
+        <h3 id="answer"></h3>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <h2>Made with love ♡</h2>
+
+    <p>💜 &nbsp; 🎧 &nbsp; ❤️</p>
+
+    <p>End of lil website. Beginning of many more memories.</p>
+
+</footer>
+
+<script>
+
+function openLetter() {
+
+    let letter = document.getElementById("letter");
+
+    letter.style.display = "block";
+
+    letter.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+function quiz() {
+
+    document.getElementById("answer").innerHTML =
+    "YESSS 😂💜 Besties and endless laughter!";
+
+}
+
+</script>
+
+</body>
+</html>
+
